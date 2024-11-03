@@ -16,6 +16,7 @@ class EventListener implements Listener {
 
     public function onPlace(BlockPlaceEvent $event) {
         $item = $event->getItem();
+        $player = $event->getPlayer();
         $tntItem = StringToItemParser::getInstance()->parse("tnt");
         
         if ($tntItem !== null && $item->getTypeId() === $tntItem->getTypeId()) {
