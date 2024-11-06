@@ -17,6 +17,8 @@ use pocketmine\utils\TextFormat as TextColor;
 
 use pocketmine\nbt\tag\StringTag;
 
+use function array_map;
+
 final class TNT {
     use SingletonTrait;
 
