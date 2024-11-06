@@ -1,5 +1,9 @@
 name: AutoIgniteTNT
-version: 1.0.0
+version: 1.0.1
 author: WavyCraft
 api: 5.0.0
 main: wavycraft\tnt\Loader
+
+permissions:
+  autoignitetnt.cmd:
+    default: op
