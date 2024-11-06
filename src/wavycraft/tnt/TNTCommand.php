@@ -14,6 +14,9 @@ use pocketmine\Server;
 use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginOwned;
 
+use function count;
+use function intval;
+
 class TNTCommand extends Command implements PluginOwned {
 
     private $plugin;
@@ -52,15 +55,15 @@ class TNTCommand extends Command implements PluginOwned {
         $targetPlayer = Server::getInstance()->getPlayerByPrefix($playerName);
         
         if (!$targetPlayer instanceof Player) {
-            $sender->sendMessage("The player " . $playerName . " was not found, Make sure they're online or exist");
+            $sender->sendMessage("The player " . $playerName . " was not found, Make sure they're online or exist...");
             return false;
         }
 
         $tntItem = TNT::getInstance()->giveTNT($targetPlayer, $amount);
         $targetPlayer->getInventory()->addItem($tntItem);
 
-        $targetPlayer->sendMessage("Recieved $amount instant TNT from " . $sender->getName() . "!");
-        $sender->sendMessage("Gave $amount instant TNT to " . $targetPlayer->getName() . "!");
+        $targetPlayer->sendMessage("Recieved " . $amount . " instant TNT from " . $sender->getName() . "!");
+        $sender->sendMessage("Gave " . $amount . " instant TNT to " . $targetPlayer->getName() . "!");
         return true;
     }
 }
