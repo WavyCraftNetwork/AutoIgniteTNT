@@ -10,16 +10,14 @@ use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\entity\Location;
 use pocketmine\entity\object\PrimedTNT;
 
-use pocketmine\item\StringToItemParser;
-
 class EventListener implements Listener {
 
     public function onPlace(BlockPlaceEvent $event) {
         $item = $event->getItem();
         $player = $event->getPlayer();
-        $tntItem = StringToItemParser::getInstance()->parse("tnt");
-        
-        if ($tntItem !== null && $item->getTypeId() === $tntItem->getTypeId()) {
+        $nbt = $item->getNamedTag();
+
+        if ($nbt->getTag("TNT")) {
             $event->cancel();
             $position = $event->getBlockAgainst()->getPosition();
             $world = $position->getWorld();
@@ -31,7 +29,8 @@ class EventListener implements Listener {
             $tnt->setFuse(80);
             $tnt->spawnToAll();
 
-            $player->getInventory()->removeItem($tntItem->setCount(1));
+            $player->getInventory()->removeItem($item->setCount(1));
+            return;
         }
     }
 }
