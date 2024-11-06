@@ -1,0 +1,23 @@
+# Name of the TNT item
+# You may use "&" for the color symbol
+
+tnt.name: "&r&fAuto Ignite TNT"
+
+# Lore of the TNT item
+# You can add unlimited lines
+# You may use "&" for the color symbol
+
+tnt.lore: 
+  - ""
+  - "&r&eOnce placed the tnt will auto ignite!"
+
+# Enchantment for the TNT item
+# List of available enchantments you can use
+# https://github.com/pmmp/PocketMine-MP/blob/stable/src/item/enchantment/StringToEnchantmentParser.php
+
+tnt.enchantment: "blast_protection"
+
+# Enchantment level
+# 1-32767
+
+tnt.enchantment.level: 4
