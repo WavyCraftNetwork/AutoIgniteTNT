@@ -12,6 +12,7 @@ tnt.lore:
   - "&r&eOnce placed the tnt will auto ignite!"
 
 # Enchantment for the TNT item
+# Note: Not all enchantments are available
 # You can find a list of available enchantments via website below
 # https://github.com/pmmp/PocketMine-MP/blob/stable/src/item/enchantment/StringToEnchantmentParser.php
 
